@@ -16,6 +16,7 @@ It is recommended to study the Lessons first to build a theoretical foundation, 
 * OpenCV, Pillow – Image processing
 * NumPy – Numerical computation for image data
 * Matplotlib – Data visualization and plotting
+
 **2. Linear Algebra**
 Fundamental knowledge of linear algebra is required for understanding image transformations and model construction.
 **3. Jupyter Lab**

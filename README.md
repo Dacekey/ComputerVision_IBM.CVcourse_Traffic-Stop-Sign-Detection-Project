@@ -3,7 +3,7 @@ This is a foundation knowledge about Computer Vision for beginner. This course i
 ---
 There is 4 main files:
   1. Labs: where contains the practice notebooks.
-  2. Lessons: where contains the theory notebook.
+  2. Lessons: where contains the theory notebooks.
   3. FinalProject: where applying all knowledge to build a model that detect 'stop-sign' in term of traffic.
   4. FinalQuiz: some small questions to summarise the total course.
 

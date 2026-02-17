@@ -1,4 +1,5 @@
 This is a foundation knowledge about Computer Vision for beginner. This course is published by IBM on Coursera. I have already learned and package it into Notebooks. The course named "Introduction to Computer Vision and Image Processing".
+
 ---
 There is 4 main files:
   1. Labs: where contains the practice notebooks.
@@ -7,6 +8,7 @@ There is 4 main files:
   4. FinalQuiz: some small questions to summarise the total course.
 
 I recommend watching and reviewing the file 'Lessons' first, then coming into file 'Labs' to review more.
+
 ---
 Requirement & Tools:
   1. Python & Python Library:

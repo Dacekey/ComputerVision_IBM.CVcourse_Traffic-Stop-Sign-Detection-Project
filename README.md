@@ -3,10 +3,10 @@ This repository provides foundational knowledge in Computer Vision for beginners
 
 # Repository Structure
 The project consists of four main components:
-  1. Labs – Contains practical notebooks for hands-on implementation and experimentation.
-  2. Lessons – Includes theoretical notebooks covering fundamental concepts.
-  3. FinalProject – Applies the acquired knowledge to develop a model for detecting traffic stop signs.
-  4. FinalQuiz – Provides review questions to summarize and reinforce the course content.
+  1. **Labs** – Contains practical notebooks for hands-on implementation and experimentation.
+  2. **Lessons** – Includes theoretical notebooks covering fundamental concepts.
+  3. **FinalProject** – Applies the acquired knowledge to develop a model for detecting traffic stop signs.
+  4. **FinalQuiz** – Provides review questions to summarize and reinforce the course content.
 It is recommended to study the Lessons first to build a theoretical foundation, and then proceed to the Labs for practical reinforcement.
 
 # Requirements and Tools

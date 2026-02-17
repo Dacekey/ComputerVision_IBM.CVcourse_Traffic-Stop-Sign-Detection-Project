@@ -1,0 +1,94 @@
+Module Summary: Image Processing with OpenCV and Pillow
+Congratulations! You have completed this module. At this point, you know that: 
+
+A digital image is a rectangular array of pixels, each with an intensity value, ranging from 0 to 255.
+
+Gray-scale images use values from 0 (black) to 255 (white). Rows are indexed top to bottom and columns are indexed left to right.
+
+RGB images are composed of three channels: red, green, and blue. Each channel is like a gray-scale image with its own intensity values.
+
+A grayscale image is like a square (2D), while a color image is like a cube (3D).
+
+An image mask can be used to identify objects; the intensity of the object is represented as 1, and the rest are zeros. 
+
+A video is a sequence of images (frames).
+
+JPEG and PNG are common compressed formats for images.
+
+The Python Imaging Library (PIL) or Pillow is a popular library for working with images in Python. It allows you to:
+
+Load images, check attributes (format, size, mode).
+
+Convert images to grayscale
+
+Save images in different formats 
+
+Split images into RGB channels
+
+Convert images to NumPy arrays
+
+OpenCV is more powerful but harder to use compared to PIL. Images are represented as NumPy arrays with 8-bit unsigned intensity values. Unlike PIL, OpenCV uses a BGR channel order instead of RGB.
+
+Assigning an image array to a new variable points to the same memory address as the original image.
+
+Using the copy function creates a new image with a different memory address, making it independent of the original.
+
+A copied image remains unaffected in case the original array is modified.
+
+Not copying images is a common mistake that can lead to unintended modifications.
+
+Flipping changes image orientation by altering pixel index mappings.
+
+For color images, flipping applies to all color channels simultaneously.
+
+PIL and OpenCV both provide multiple methods for flipping and rotating images, but their functions and parameter naming differ.
+
+Each pixel in a gray-scale image has a value (intensity) and an index in a 2D array: rows (top to bottom), columns (left to right).
+
+Cropping is cutting out part of an image and throwing away the rest. It involves slicing by selecting specific rows and columns and assigning them to a new variable. 
+
+It can be applied to multiple channels in color images.
+
+Individual pixel values can be changed to change the image's appearance. In color images, you can modify individual channels (for example, only the red channel).
+
+Both PIL and OpenCV allow fine-grained image manipulations, including cropping, pixel value changes, drawing shapes, overlaying text, and superimposing images.
+
+Superimposing an image involves pasting part of one image onto another by reassigning pixel values in a specific row/column range.
+
+A histogram counts occurrences of the intensity of each pixel in an image. Most images have 256 intensity levels (0-255). 
+
+The frequencies for the intensity levels are shown in a bar graph. Darker regions represent lower intensities and the brighter regions represent higher intensities.
+
+Histograms are useful for analyzing image characteristics and manipulating images.
+
+An intensity transformation changes an image one pixel at a time by mapping the intensity in input array to a new intensity in the output array.
+
+Linear transforms adjust pixel values systematically across the image.
+
+Image negatives reverse intensity levels, enhancing visibility of details.
+
+Linear transformations can be applied for brightness and contrast adjustments: Nonlinear transformations can also be used for advanced contrast optimization.
+
+Histogram Equalization is an algorithm that uses the image's histogram to adjust contrast. The function flattens the histogram to spread intensity values evenly, improving contrast.
+
+Thresholding converts an image into binary form (0 or 255). Each pixel is compared to a threshold. Any value greater than the threshold is assigned the value 255, while any value less than the threshold is assigned the value 0. 
+
+It can be used to segment objects from the background.
+
+Otsu's method can automatically select an optimal threshold when manual selection is difficult.
+
+Spatial operations improve image quality, detect features like edges, and are foundational for many computer vision tasks.
+
+Spatial operations involve a neighborhood of pixels. A function is applied to each neighborhood, producing a new image.
+
+Convolution or linear filtering uses a kernel (filter) to process the image. Each output pixel is calculated by multiplying the kernel values with the corresponding image pixels and summing them.
+
+The kernel is shifted across the image to compute the entire output. Padding (zero padding or border replication) is used to handle size differences.
+
+Low-pass filters reduce noise and smooth images. Mean filters average pixel values within a neighborhood. However, smoothing reduces noise but can make edges less sharp.
+
+Edges are areas with sharp intensity changes. Edges can be approximated using differences between adjacent pixels or using convolution with kernels.
+
+Sobel operators detect horizontal and vertical gradients. Combining horizontal and vertical gradients gives edge magnitude and direction.
+
+Median filters replace each pixel with the median of its neighborhood. They are effective at removing certain types of noise while preserving edges. They can slightly distort images if neighborhoods contain important features.

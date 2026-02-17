@@ -1,0 +1,106 @@
+Module Summary: Machine Learning Image Classification
+Congratulations! You have completed this module. At this point, you know that: 
+
+Image classification is the process of getting a computer to automatically classify an image into a category or provide probabilities of possible classes. A class is a label, such as cat, car, or building.
+
+Common applications include smartphone photo organization, radiology (identifying anomalies in X-rays), and self-driving cars (recognizing surroundings).
+
+Intensity values are used to classify images. X represents the images. The images are represented by an array of intensity values (a 3D array is the case of RGB). The images in a dataset must have the same number of rows and columns.
+
+Y represents the label. (Dog = 1, Cat = 0)
+
+Datasets consist of pairs of images X and labels Y. 
+
+Challenges in image classification include changes in viewpoint, illumination, deformation, occlusion, and background clutter.
+
+To address these challenges, supervised machine learning approaches such as K-nearest neighbors (KNN), feature extraction, and linear classifiers are adopted.
+
+KNN is a simple classification algorithm that classifies unknown data points based on the most common classes among the K nearest examples.
+
+Images are represented as vectors (concatenated RGB channels or grayscale), and Euclidean distance is used to measure similarity between samples.
+
+The process involves using a training set of labeled images. For an unknown sample, distances to all training samples are calculated. The label of the nearest neighbor is assigned to the unknown sample.  
+
+Data is split into training and testing sets. (Usually, a larger portion is used for training, and a smaller portion is used for testing.)
+
+Accuracy is measured as the average number of times the model got it correct.
+
+Majority voting with K nearest samples helps reduce errors when a nearest neighbor might be misleading. 
+
+The value of K is selected using a validation set to maximize accuracy. This is called the hyperparameter. Once K is chosen, KNN can classify new images. Eventually, adding new classes is simple.
+
+KNN is not a preferred method, as it is slow and cannot handle many challenges of image classification effectively.
+
+A linear classifier applies a simple algebraic function to input images to predict their class or the probability of belonging to a class.
+
+Images (grayscale or RGB) are represented as vectors, and classification is performed using a decision plane (or hyperplane in higher dimensions) defined by learnable parameters w (weights) and b (bias).
+
+The decision boundary is where the plane intersects z = 0; points on one side are classified as one class (for example, dog) and points on the other side as the other class (for example, cat).
+
+A threshold function converts raw outputs z into discrete classes (0 or 1). 
+
+The logistic (sigmoid) function converts z into a probability between 0 and 1 for better performance. Classification works by comparing the sigmoid output to 0.5: values above 0.5 predict class 1, values below predict class 0.
+
+Linear classifiers may fail when data is not linearly separable, but with known learnable parameters, the model can predict classes or probabilities for any input image.
+
+Training a classifier involves finding the best learnable parameters for the decision boundary using a dataset of images.
+
+Loss functions measure how good predictions are; classification loss sums up the losses over the dataset.
+
+Cross-entropy loss is preferred in practice over simple classification loss because it uses predicted probabilities and gives smoother gradients.
+
+The cost is the sum of the loss over all samples and depends on the current parameters; a lower cost indicates better classification.
+
+Gradient descent is used to find parameters that minimize the cost by iteratively moving in the direction opposite to the gradient; the learning rate (eta) controls the step size.
+
+Proper selection of learning rate is crucial: too small slows convergence, too large may overshoot or oscillate, and validation data helps choose the best value.
+
+In multi-dimensional parameter space, the gradient is a vector; the cost surface resembles a bowl, and iterative updates converge to the minimum, improving the decision plane for classification.
+
+Mini-batch gradient descent allows training on large datasets by using a few samples at a time instead of the entire dataset.
+
+Using all samples in one pass is called batch gradient descent, where one iteration equals one epoch. Mini batches calculate a smaller, noisy version of the total loss.
+
+The number of iterations per epoch is determined by dividing the number of training examples by the batch size.
+
+Smaller batch sizes mean more iterations per epoch; larger batch sizes mean fewer iterations per epoch.
+
+After each epoch, accuracy is evaluated on validation data to monitor performance.
+
+Training too long can lead to overfitting, where accuracy decreases on validation data despite low training loss.
+
+The argmax function returns the index of the largest value in a sequence, which is used to determine the predicted class.
+
+Logistic regression works for two classes, but for multi-class classification, we use one decision plane per class.
+
+Each class has a corresponding plane or equation; the input is classified based on which plane outputs the largest value, defining the region for that class.
+
+The SoftMax function converts the outputs of each plane into probabilities, allowing selection of the class with the highest probability.
+
+Training SoftMax classifiers is similar to logistic regression, using learnable parameters and outputs for classification.
+
+Other multi-class strategies include One-vs-Rest and One-vs-One, often used with SVMs, although SoftMax is not always the best choice.
+
+Support vector machines (SVMs) are a machine learning method used for classification, focusing on separating data with the maximum margin.
+
+When data is not linearly separable, it can be transformed into higher dimensions; kernels such as linear, polynomial, and radial basis function (RBF) provide shortcuts for this transformation, with RBF being the most widely used.
+
+The Gamma parameter in the RBF kernel controls flexibility: too high can cause overfitting, while the best value is chosen using validation data.
+
+Overfitting happens when the classifier fits training points too perfectly but fails on new data; validation helps identify the right hyperparameters.
+
+SVMs find the optimal hyperplane that represents the largest margin between classes; only vectors closest to the hyperplane (support vectors) matter for classification.
+
+When classes are not perfectly separable, a soft margin SVM is used, controlled by the regularization parameter (C), which balances correct classification with allowing some errors.
+
+Using pixel intensities for image classification is unreliable since slight shifts in the image change the feature vector drastically.
+
+Features are measurements from images that improve classification; color histograms help, but they don't capture pixel relationships. Splitting into sub-images can improve results.
+
+Color alone is not reliable for classification, as objects of different colors may appear similar when converted to grayscale.
+
+Gradient-based features like the histogram of oriented gradients (HOG) capture edge and shape information by computing histograms of gradient directions in local regions.
+
+HOG works by converting images to grayscale, calculating gradients with Sobel, dividing into cells, creating histograms of gradient orientations, and normalizing blocks to reduce lighting effects.
+
+The HOG feature vector, combined with SVM, is effective for image classification; other features like SIFT and SURF are also available in OpenCV.

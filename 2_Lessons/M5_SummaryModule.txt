@@ -1,0 +1,24 @@
+Module Summary: Object Detection
+Congratulations! You have completed this module. At this point, you know that: 
+
+Object detection goes beyond classification by locating multiple objects in an image, assigning each a class and a bounding box.
+
+The sliding window algorithm systematically scans sub-images, classifying each region. Challenges include overlapping detections, varying object sizes, and shapes.
+
+Bounding boxes define object locations with coordinates (either corner points or width/height), and object detection aims to predict these coordinates along with the class.
+
+The bounding box pipeline trains a model using both class labels and bounding box coordinates, producing predictions with updated parameters for object detection.
+
+Detection models also output a confidence score (0 to 1); applying a threshold ensures only reliable predictions are kept, improving accuracy. Setting a high score threshold reduces false detections and improves the identification of correct objects in an image.
+
+Haar feature-based cascade classifiers, proposed by Viola and Jones in 2001, are used for object detection tasks like cars, traffic lights, and pedestrians.
+
+The method trains on large sets of positive images (with the object) and negative images (background), extracting features using Haar wavelets.
+
+Haar wavelets detect edges, lines, and diagonal edges, and the integral image technique speeds up feature calculation by summing pixel regions efficiently.
+
+A 24×24 window produces over 180,000 features, but AdaBoost reduces this to about 6,000 by selecting only the most important features.
+
+AdaBoost combines weak classifiers into a strong classifier, emphasizing misclassified examples in each round to improve accuracy.
+
+Cascade classifiers apply detection in multiple stages, quickly discarding regions without the object and passing only likely candidates to deeper stages for verification.

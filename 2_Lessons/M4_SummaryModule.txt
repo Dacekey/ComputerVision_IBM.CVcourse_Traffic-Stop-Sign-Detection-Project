@@ -1,0 +1,50 @@
+Module Summary: Neural Networks and Deep Learning for Image Classification
+Congratulations! You have completed this module. At this point, you know that: 
+
+Neural networks are used to approximate decision functions for classifying non-linearly separable datasets.
+
+Logistic regression with a straight line cannot separate all the data correctly, as some points fall on the wrong side.
+
+Applying a sigmoid (activation) function transforms outputs, but alone it may still misclassify some samples.
+
+By combining and subtracting multiple sigmoid functions with learnable parameters, we can approximate the box-shaped decision function.
+
+A two-layer neural network, with hidden neurons and an output neuron, can separate data points in higher dimensions using learned weights.
+
+Neural networks scale to many inputs and parameters, with modern models containing millions, enabling them to classify complex, multi-dimensional data.
+
+Fully connected neural networks arrange hidden layers and neurons, with each neuron receiving inputs from all neurons in the previous layer.
+
+For multiclass predictions, the output layer includes one neuron per class, and the class with the highest output value is chosen, often using a SoftMax function.
+
+Adding more layers creates deep neural networks, which can improve performance but risk overfitting and are harder to train.
+
+Training deep networks is challenging due to the vanishing gradient problem, especially with sigmoid activations; Relu is commonly used in hidden layers to address this.
+
+Methods such as dropout reduce overfitting. Batch normalization and skip connections improve the training of deep networks.
+
+Neural networks replace kernels in support vector machines (SVMs) and can be trained on raw images or extracted features, though training is often complex and requires experimentation.
+
+Convolutional neural networks (CNNs) are specialized neural networks for images that combine convolutional layers, pooling layers, and fully connected layers to classify objects.
+
+Convolution and pooling layers act as feature learning layers, while fully connected layers function as a standard neural network.
+
+CNN kernels are learnable parameters that detect image features, producing activation maps (feature maps); stacking layers builds more complex features: first edges/corners, then parts, then complete objects. Each layer’s output channels become the next layer’s input channels.
+
+The receptive field refers to the region of the input image influencing a pixel in the activation map; stacking layers increases the receptive field more efficiently than enlarging kernels.
+
+Pooling layers (especially max pooling) reduce the number of parameters, increase the receptive field, and make the network more robust to small shifts in the image.
+
+In the final stage, outputs of feature-learning layers are flattened into vectors and fed into fully connected layers for classification, with the input size matching the flattened dimensions.
+
+Key CNN Architectures include LeNet-5, AlexNet, VGGNet, and ResNet, each improving on depth, efficiency, or training strategies over time.
+
+Early CNN architecture, LeNet-5, was designed for handwritten digit recognition (MNIST) and uses alternating convolution and pooling layers, followed by fully connected layers with sigmoid activations.
+
+AlexNet broke ImageNet records in 2012 with 63.3% accuracy, featuring larger convolution kernels and many parameters, demonstrating CNNs’ dominance over SVMs for image classification.
+
+VGGNet introduced deeper networks with smaller 3×3 convolution kernels, reducing parameters while maintaining receptive fields; variants include VGG-16 and VGG-19.
+
+ResNet addresses vanishing gradient problems in deep networks through residual (skip) connections, allowing gradients to bypass layers and enabling much deeper networks.
+
+Transfer learning uses pre-trained CNNs as feature extractors; you can replace the final SoftMax layer to classify a new dataset or use an SVM for classification, leveraging vast pre-trained knowledge.
